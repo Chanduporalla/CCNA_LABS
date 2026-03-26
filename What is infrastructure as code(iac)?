@@ -1,0 +1,23 @@
+CCNA labs lo Front: What is Infrastructure as Code (IaC)?
+Back: Managing and provisioning infrastructure through machine-readable definition files (code), rather than physical hardware configuration or interactive configuration tools.
+
+Front: What is the primary difference in approach between Python and Ansible?
+Back: Python is generally imperative (you code the exact steps). Ansible is declarative (you declare the final desired state, and Ansible handles the steps).
+
+Front: What is Netmiko?
+Back: A multi-vendor Python library used to simplify SSH connections to network devices and execute CLI commands.
+
+Front: What does NAPALM do?
+Back: It abstracts vendor differences, allowing you to use a single Python API to interact with devices from Cisco, Juniper, Arista, etc., and returns data in a structured format.
+
+Front: What is an Ansible Playbook?
+Back: A YAML file containing a series of tasks and configurations to be executed by Ansible against a defined inventory of hosts.
+
+Front: Does Ansible require an agent to be installed on network devices?
+Back: No, Ansible is agentless. It connects to network devices using standard protocols like SSH or NETCONF.
+
+Front: What are NETCONF and RESTCONF?
+Back: Standardized API protocols used to install, manipulate, and delete the configuration of network devices using XML or JSON, replacing traditional CLI scraping.
+
+Front: What is YANG?
+Back: A data modeling language used to define the structure and format of data sent over protocols like NETCONF and RESTCONF.
