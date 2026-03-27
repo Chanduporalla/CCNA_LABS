@@ -1,0 +1,191 @@
+# 🧪 PART 1: COMPLETE LAB (Backup & Restore using TFTP)
+
+## 🧱 Topology
+
+```
+PC0 —— Switch —— Router (R1)
+```
+
+---
+
+## ⚙️ Step 1: Configure Router
+
+```bash
+enable
+configure terminal
+hostname R1
+
+interface gig0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+description LAN Connection
+exit
+
+line console 0
+password cisco
+login
+exit
+
+end
+write memory
+```
+
+---
+
+## 💻 Step 2: Configure PC
+
+* IP Address: `192.168.1.2`
+* Subnet Mask: `255.255.255.0`
+* Default Gateway: `192.168.1.1`
+
+👉 Turn ON:
+
+* Services → **TFTP → ON**
+
+---
+
+## 🔍 Step 3: Test Connectivity
+
+```bash
+ping 192.168.1.2
+```
+
+✅ Must be successful
+
+---
+
+## 💾 Step 4: Backup Configuration
+
+```bash
+copy running-config tftp
+```
+
+Enter:
+
+* Remote host: `192.168.1.2`
+* Filename: `backup1`
+
+---
+
+## 💥 Step 5: Simulate Failure
+
+```bash
+write erase
+reload
+```
+
+👉 Type **no** when asked to save
+
+---
+
+## 🔄 Step 6: Restore Configuration
+
+```bash
+enable
+copy tftp running-config
+```
+
+Enter:
+
+* Remote host: `192.168.1.2`
+* Filename: `backup1`
+
+---
+
+## ✅ Step 7: Verify
+
+```bash
+show running-config
+```
+
+🎉 Configuration restored!
+
+---
+
+# 🧠 PART 2: FLASHCARDS (Quick Revision)
+
+---
+
+## 🟦 Flashcard 1
+
+**Q:** What is Backup?
+**A:** Saving configuration to another device (TFTP server).
+
+---
+
+## 🟦 Flashcard 2
+
+**Q:** What is Restore?
+**A:** Loading saved configuration back into the router.
+
+---
+
+## 🟦 Flashcard 3
+
+**Q:** Protocol used?
+**A:** TFTP
+
+---
+
+## 🟦 Flashcard 4
+
+**Q:** Backup command?
+**A:** `copy running-config tftp`
+
+---
+
+## 🟦 Flashcard 5
+
+**Q:** Restore command?
+**A:** `copy tftp running-config`
+
+---
+
+## 🟦 Flashcard 6
+
+**Q:** Router IP in lab?
+**A:** 192.168.1.1
+
+---
+
+## 🟦 Flashcard 7
+
+**Q:** PC (TFTP server) IP?
+**A:** 192.168.1.2
+
+---
+
+## 🟦 Flashcard 8
+
+**Q:** Erase config command?
+**A:** `write erase`
+
+---
+
+## 🟦 Flashcard 9
+
+**Q:** Reload command?
+**A:** `reload`
+
+---
+
+## 🟦 Flashcard 10
+
+**Q:** Verify config?
+**A:** `show running-config`
+
+---
+
+## 🟦 Flashcard 11
+
+**Q:** What must be ON in PC?
+**A:** TFTP service
+
+---
+
+## 🟦 Flashcard 12
+
+**Q:** What must work before backup?
+**A:** Ping (network connectivity)
+
+---
