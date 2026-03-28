@@ -1,0 +1,204 @@
+🟢 Category 1: Networking Fundamentals & OSI Model
+What is a Network?
+
+Explain the OSI Model and name all 7 layers.
+
+What is the difference between the OSI and TCP/IP models?
+
+What is a PDU (Protocol Data Unit)? Name them for each layer.
+
+What is the difference between Half-Duplex and Full-Duplex?
+
+Define Unicast, Multicast, and Broadcast.
+
+What is Latency in a network?
+
+What is Bandwidth?
+
+Explain Encapsulation and De-encapsulation.
+
+What is a Collision Domain?
+
+What is a Broadcast Domain?
+
+How does a Hub differ from a Switch?
+
+How does a Switch differ from a Router?
+
+What is the purpose of the Physical Layer?
+
+What is the difference between MAC Address and IP Address?
+
+What is a Frame?
+
+What is ARP (Address Resolution Protocol)?
+
+How does RARP differ from ARP?
+
+What is a Default Gateway?
+
+What is ICMP? Which tool uses it?
+
+🔵 Category 2: IP Addressing & Subnetting
+What is an IP Address?
+
+Explain the difference between IPv4 and IPv6.
+
+What are the different Classes of IPv4 addresses?
+
+What are the Private IP ranges for Class A, B, and C?
+
+What is Subnetting and why is it used?
+
+What is a Subnet Mask?
+
+What is VLSM (Variable Length Subnet Masking)?
+
+Explain CIDR (Classless Inter-Domain Routing).
+
+What is a Loopback Address (127.0.0.1)?
+
+What is an APIPA address?
+
+How many bits are in an IPv6 address?
+
+What is the Global Unicast address in IPv6?
+
+What is a Link-Local address?
+
+How do you find the Network ID from an IP and Subnet mask?
+
+How many usable hosts are in a /24 subnet?
+
+What is the subnet mask for a /30 prefix?
+
+Can you have two devices with the same IP in one network?
+
+What is Public IP?
+
+What is the purpose of NAT (Network Address Translation)?
+
+Explain the types of NAT (Static, Dynamic, PAT).
+
+🟡 Category 3: Switching & VLANs
+What is a VLAN?
+
+Why do we use VLANs?
+
+What is the difference between an Access Port and a Trunk Port?
+
+What is VTP (VLAN Trunking Protocol)?
+
+Explain Native VLAN.
+
+What is 802.1Q?
+
+What is STP (Spanning Tree Protocol)?
+
+Why is STP important in a switched network?
+
+Name the different STP States (Blocking, Listening, etc.).
+
+What is a Root Bridge?
+
+What is the difference between STP and RSTP?
+
+What is PortFast?
+
+What is EtherChannel?
+
+Explain LACP vs PAgP.
+
+What is Frame Flooding?
+
+How does a switch build its MAC Address Table?
+
+What is Port Security?
+
+What is the default aging time of a MAC table?
+
+Explain Layer 3 Switching.
+
+What is Inter-VLAN Routing (Router-on-a-stick)?
+
+🟠 Category 4: Routing & Protocols
+What is Routing?
+
+Difference between Static and Dynamic Routing.
+
+What is Administrative Distance (AD)?
+
+What is a Routing Metric?
+
+Define Default Route.
+
+What is RIP (Routing Information Protocol)?
+
+What is the Hop Count limit in RIP?
+
+Explain OSPF (Open Shortest Path First).
+
+What is an Area in OSPF?
+
+What is Router ID in OSPF?
+
+Explain EIGRP (Enhanced Interior Gateway Routing Protocol).
+
+What are the metrics used by EIGRP (K-values)?
+
+What is BGP (Border Gateway Protocol)?
+
+What is an Autonomous System (AS)?
+
+Difference between Distance Vector and Link State protocols.
+
+What is Convergence in routing?
+
+What is Passive Interface?
+
+Explain Route Poisoning.
+
+What is Split Horizon?
+
+What is the AD value of OSPF, EIGRP, and RIP?
+
+🔴 Category 5: Security, Services & Management
+What is an ACL (Access Control List)?
+
+Difference between Standard and Extended ACLs.
+
+What is DHCP? Explain the DORA process.
+
+What is DNS?
+
+What is SSH and how is it different from Telnet?
+
+What is SNMP?
+
+Explain HSRP (Hot Standby Router Protocol).
+
+What is VRRP and GLBP?
+
+What is the purpose of Syslog?
+
+What is NTP?
+
+Explain the different Cisco Router Memories (RAM, ROM, NVRAM, Flash).
+
+Where is the Startup-config stored?
+
+What is the command to save the configuration?
+
+How do you recover a lost password on a Cisco router?
+
+What is PoE (Power over Ethernet)?
+
+Explain the TCP 3-Way Handshake.
+
+What is the difference between TCP and UDP?
+
+What is a Firewall?
+
+What is a VPN?
+
+What is SD-WAN (Basics)?
