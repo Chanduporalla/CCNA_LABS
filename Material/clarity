@@ -302,3 +302,62 @@ In a team environment, Postman allows you to export your "Collections" as JSON f
     If you figure out the exact API call needed to troubleshoot a specific SD-WAN issue, you can share that collection with your teammates.
 
     This creates a "Living Documentation" of how to interact with your specific network's API, which is far more effective than a static PDF or Word document.
+
+PuTTY is a free, open-source terminal emulator that has been the industry standard for network engineers for decades. It acts as a "window" that allows your computer to talk to network hardware (like routers, switches, and firewalls) or remote servers.
+
+While it looks simple, mastering its configuration is vital for efficient day-to-day network operations.
+
+---
+
+## What PuTTY Does
+At its core, PuTTY facilitates communication through several protocols. In networking, you will primarily use it for:
+* **SSH (Secure Shell):** The standard for encrypted, secure remote management.
+* **Serial:** Used for the "Console" connection when you are physically standing in front of a device with a console cable.
+* **Telnet:** An older, unencrypted protocol (rarely used now due to security risks, but still seen in older labs).
+
+---
+
+## Must-Learn Topics for Network Engineers
+
+To move beyond just "opening a connection," you should master these specific features:
+
+### 1. Connection Management & Profiles
+Don't type the IP address every time. 
+* **Saved Sessions:** Learn to save hostnames, IP addresses, and specific settings (like window size) into named profiles.
+* **Default Settings:** Modify the "Default Settings" profile so every new session starts with your preferred font, colors, and logging settings.
+
+### 2. Session Logging (Critical for Troubleshooting)
+In the networking world, if it isn't logged, it didn't happen.
+* **How it works:** Go to **Session > Logging**. 
+* **Why it's a "Must":** Configure PuTTY to automatically save all terminal output to a `.log` or `.txt` file. This is essential when you are doing a long configuration or troubleshooting session and need to review the output later or show it to a senior engineer.
+
+### 3. SSH Key Authentication
+Typing passwords manually is inefficient and less secure.
+* **PuTTYgen:** Learn to use this tool (included with the PuTTY suite) to generate Public and Private key pairs.
+* **Automation:** By adding your Public Key to a router or server, you can log in instantly without a password.
+
+### 4. Window & Appearance Customization
+Since you will spend hours looking at this screen, ergonomics matter.
+* **Lines of Overlook:** Change the "Lines of scrollback" (default is often only 2000). Set it to **20,000** so you don't lose the top of a long configuration when scrolling up.
+* **Colors & Fonts:** Learn to change the background and text color to reduce eye strain (e.g., using a "Solarized" or dark theme).
+
+### 5. Terminal Features (Copy/Paste)
+PuTTY handles copy/paste differently than Windows.
+* **The "Right-Click" Rule:** By default, highlighting text in PuTTY **automatically copies it** to your clipboard. Right-clicking **automatically pastes** it. Mastering this prevents "double-pasting" errors during configuration.
+
+### 6. X11 Forwarding & Tunneling (Intermediate)
+* **SSH Tunneling:** Learn how to use PuTTY as a "secure tunnel" to access web-based management GUIs of devices that are hidden behind a firewall.
+* **Port Forwarding:** Forwarding a local port on your laptop to a remote port on a server.
+
+---
+
+## Comparison: Why use PuTTY vs. others?
+
+| Feature | PuTTY | MobaXterm / SecureCRT |
+| :--- | :--- | :--- |
+| **Cost** | Free (Open Source) | Paid / Freemium |
+| **Portability** | Single `.exe` file; very light | Requires full installation |
+| **Tabs** | No (Each session is a new window) | Yes (Tabbed interface) |
+| **Best For** | Quick access, console cables | Managing 20+ devices at once |
+
+> **Pro Tip:** As a fresher, always keep a "Portable" version of PuTTY on a USB drive. If you are in a data center with a crash-cart laptop that has no software, you can run PuTTY directly from your drive to fix the network.
