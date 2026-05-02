@@ -11,3 +11,255 @@ Key Skills for Network Engineering Jobs:
     Layer 1 Infrastructure: Known as the "full-stack" aspect, you will likely need to handle physical equipment, fiber cables, and racking/stacking (11:00 - 12:00).
 
 Final Advice: Focus on the most common protocols and practical troubleshooting experience. You do not need to spend years learning every tool; many skills are picked up on the job once you understand the core fundamentals (12:00 - 13:16).
+Got it—you want **important Computer Networks interview questions with clear explanations**. I’ll give you **high-frequency questions + crisp answers + examples**, especially useful for **Java Full Stack / Software roles**.
+
+---
+
+# 🔥 1. What is a Computer Network?
+
+A **computer network** is a collection of interconnected devices that communicate and share resources.
+
+👉 Example: Internet, LAN in college
+
+---
+
+# 🔥 2. What is the OSI Model?
+
+The **OSI (Open Systems Interconnection) model** has **7 layers**:
+
+1. Physical – cables, signals
+2. Data Link – MAC address, switching
+3. Network – IP addressing, routing
+4. Transport – TCP/UDP
+5. Session – connection management
+6. Presentation – encryption, formatting
+7. Application – HTTP, FTP, DNS
+
+👉 Interview Tip: Always remember order (bottom → top)
+
+---
+
+# 🔥 3. What is TCP vs UDP?
+
+| Feature     | TCP                 | UDP               |
+| ----------- | ------------------- | ----------------- |
+| Type        | Connection-oriented | Connectionless    |
+| Reliability | High                | Low               |
+| Speed       | Slower              | Faster            |
+| Use         | Web, Email          | Streaming, Gaming |
+
+👉 Example:
+
+* TCP → WhatsApp messages
+* UDP → YouTube video streaming
+
+---
+
+# 🔥 4. What is an IP Address?
+
+A unique identifier for a device in a network.
+
+👉 Types:
+
+* IPv4 → 192.168.1.1
+* IPv6 → 2001:db8::1
+
+---
+
+# 🔥 5. What is DNS?
+
+**DNS (Domain Name System)** converts domain names into IP addresses.
+
+👉 Example:
+google.com → 142.250.xxx.xxx
+
+---
+
+# 🔥 6. What is HTTP vs HTTPS?
+
+| HTTP          | HTTPS        |
+| ------------- | ------------ |
+| Not secure    | Secure       |
+| No encryption | Uses SSL/TLS |
+| Port 80       | Port 443     |
+
+👉 HTTPS protects passwords & data
+
+---
+
+# 🔥 7. What is a Port Number?
+
+A logical endpoint for communication.
+
+👉 Examples:
+
+* 80 → HTTP
+* 443 → HTTPS
+* 22 → SSH
+* 3306 → MySQL
+
+---
+
+# 🔥 8. What is a MAC Address?
+
+A **physical address** of a device (hardcoded).
+
+👉 Example:
+00:1A:2B:3C:4D:5E
+
+---
+
+# 🔥 9. What is a Router?
+
+A device that forwards data between networks.
+
+👉 Example: Your home WiFi router
+
+---
+
+# 🔥 10. What is a Switch?
+
+Connects devices within a network using MAC addresses.
+
+👉 Difference:
+
+* Switch → inside LAN
+* Router → between networks
+
+---
+
+# 🔥 11. What is a Firewall?
+
+A security system that controls incoming/outgoing traffic.
+
+👉 Example: Blocks hackers
+
+---
+
+# 🔥 12. What is NAT?
+
+**Network Address Translation** converts private IP → public IP.
+
+👉 Used in home WiFi
+
+---
+
+# 🔥 13. What is DHCP?
+
+Automatically assigns IP addresses.
+
+👉 Example: When you connect to WiFi
+
+---
+
+# 🔥 14. What is Subnetting?
+
+Dividing a network into smaller networks.
+
+👉 Benefit:
+
+* Better performance
+* Security
+
+---
+
+# 🔥 15. What is Bandwidth vs Latency?
+
+| Bandwidth          | Latency |
+| ------------------ | ------- |
+| Data transfer rate | Delay   |
+| Mbps               | ms      |
+
+👉 Example:
+
+* High bandwidth → fast download
+* Low latency → fast response
+
+---
+
+# 🔥 16. What is Packet?
+
+Small unit of data sent over network.
+
+---
+
+# 🔥 17. What is ARP?
+
+Maps IP address → MAC address.
+
+---
+
+# 🔥 18. What is Three-Way Handshake (TCP)?
+
+Process to establish connection:
+
+1. SYN
+2. SYN-ACK
+3. ACK
+
+👉 Ensures reliable connection
+
+---
+
+# 🔥 19. What is SSL/TLS?
+
+Protocols used to encrypt communication.
+
+👉 Used in HTTPS
+
+---
+
+# 🔥 20. What is Load Balancing?
+
+Distributes traffic across servers.
+
+👉 Example: Amazon, Flipkart websites
+
+---
+
+# 🎯 MOST ASKED PRACTICAL QUESTIONS
+
+### ✅ What happens when you type a URL?
+
+1. DNS lookup
+2. IP found
+3. TCP connection
+4. HTTP request
+5. Server response
+
+---
+
+### ✅ Difference: Hub vs Switch vs Router
+
+| Device | Work                     |
+| ------ | ------------------------ |
+| Hub    | Broadcasts data          |
+| Switch | Sends to specific device |
+| Router | Connects networks        |
+
+---
+
+# 💡 INTERVIEW STRATEGY (VERY IMPORTANT)
+
+Since you are preparing for **Java Full Stack**:
+
+Focus more on:
+
+* HTTP/HTTPS
+* REST APIs
+* TCP/IP basics
+* DNS
+* Load balancing
+
+---
+
+# 🚀 Want Next Level?
+
+I can also give you:
+
+* 🔹 50 MCQs with answers
+* 🔹 Coding + Networking integration questions
+* 🔹 Real interview questions (TCS, Infosys, Wipro)
+* 🔹 Short notes PDF
+
+Just tell me 👍
