@@ -1,0 +1,502 @@
+# Most Asked CCNA-Level Network Security Questions with Answers
+
+---
+
+# 1. What is Network Security?
+
+### Answer:
+
+Network security protects networks, devices, and data from unauthorized access and attacks.
+
+### Goals:
+
+* Confidentiality
+* Integrity
+* Availability
+
+---
+
+# 2. What is a Firewall?
+
+### Answer:
+
+A firewall filters incoming and outgoing network traffic based on security rules.
+
+### Types:
+
+* Hardware firewall
+* Software firewall
+
+---
+
+# 3. What is ACL in Cisco Networking?
+
+### Answer:
+
+ACL (Access Control List) is used to permit or deny network traffic.
+
+### Types:
+
+* Standard ACL
+* Extended ACL
+
+---
+
+# 4. Difference between Standard ACL and Extended ACL?
+
+### Answer:
+
+| Standard ACL           | Extended ACL                                  |
+| ---------------------- | --------------------------------------------- |
+| Filters source IP only | Filters source, destination, ports, protocols |
+| Less control           | More control                                  |
+
+---
+
+# 5. What is Port Security?
+
+### Answer:
+
+Port security restricts which devices can connect to a switch port using MAC addresses.
+
+### Benefits:
+
+* Prevents unauthorized access
+* Improves LAN security
+
+---
+
+# 6. What is SSH?
+
+### Answer:
+
+SSH provides secure remote access to routers and switches using encryption.
+
+---
+
+# 7. Difference between Telnet and SSH?
+
+### Answer:
+
+| Telnet      | SSH       |
+| ----------- | --------- |
+| Unencrypted | Encrypted |
+| Less secure | Secure    |
+
+---
+
+# 8. Why is SSH preferred over Telnet?
+
+### Answer:
+
+SSH encrypts usernames, passwords, and data, preventing attackers from reading information.
+
+---
+
+# 9. What is VPN?
+
+### Answer:
+
+VPN creates a secure encrypted tunnel over public internet.
+
+### Used for:
+
+* Remote access
+* Secure communication
+
+---
+
+# 10. What is AAA?
+
+### Answer:
+
+AAA stands for:
+
+* Authentication
+* Authorization
+* Accounting
+
+---
+
+# 11. What is Authentication?
+
+### Answer:
+
+Authentication verifies user identity using username/password or other methods.
+
+---
+
+# 12. What is Authorization?
+
+### Answer:
+
+Authorization determines what resources or commands a user can access.
+
+---
+
+# 13. What is Accounting in AAA?
+
+### Answer:
+
+Accounting records user activities and login information.
+
+---
+
+# 14. What is a Security Threat?
+
+### Answer:
+
+A security threat is anything that can damage or access network resources illegally.
+
+---
+
+# 15. What is Malware?
+
+### Answer:
+
+Malware is malicious software designed to damage systems or steal data.
+
+---
+
+# 16. What is Phishing?
+
+### Answer:
+
+Phishing tricks users into revealing passwords or confidential information.
+
+---
+
+# 17. What is DoS Attack?
+
+### Answer:
+
+DoS (Denial of Service) attack floods network or server resources making them unavailable.
+
+---
+
+# 18. What is DDoS Attack?
+
+### Answer:
+
+DDoS uses multiple systems to attack a target simultaneously.
+
+---
+
+# 19. What is DHCP Snooping?
+
+### Answer:
+
+DHCP snooping protects against fake DHCP servers.
+
+### Benefits:
+
+* Prevents rogue DHCP attacks
+
+---
+
+# 20. What is Dynamic ARP Inspection (DAI)?
+
+### Answer:
+
+DAI prevents ARP spoofing attacks by validating ARP packets.
+
+---
+
+# 21. What is ARP Spoofing?
+
+### Answer:
+
+ARP spoofing sends fake ARP messages to intercept traffic.
+
+---
+
+# 22. What is MAC Flooding?
+
+### Answer:
+
+MAC flooding overloads switch MAC tables causing traffic flooding.
+
+---
+
+# 23. What is BPDU Guard?
+
+### Answer:
+
+BPDU Guard disables ports receiving unexpected BPDU packets.
+
+### Purpose:
+
+* Protect STP topology
+
+---
+
+# 24. What is Root Guard?
+
+### Answer:
+
+Root Guard prevents unauthorized switches from becoming root bridge.
+
+---
+
+# 25. What is Storm Control?
+
+### Answer:
+
+Storm control limits excessive broadcast, multicast, or unknown traffic.
+
+---
+
+# 26. What is NAT?
+
+### Answer:
+
+NAT hides private IP addresses behind public IP addresses.
+
+### Security Benefit:
+
+* Internal IPs are hidden
+
+---
+
+# 27. What is PAT?
+
+### Answer:
+
+PAT allows multiple devices to share one public IP using different port numbers.
+
+---
+
+# 28. What is Secure Password Policy?
+
+### Answer:
+
+Strong passwords should include:
+
+* Uppercase
+* Lowercase
+* Numbers
+* Symbols
+
+---
+
+# 29. What is Encryption?
+
+### Answer:
+
+Encryption converts readable data into unreadable format for protection.
+
+---
+
+# 30. What is WPA2?
+
+### Answer:
+
+WPA2 secures wireless networks using strong encryption.
+
+---
+
+# 31. Difference between WPA and WPA2?
+
+### Answer:
+
+| WPA             | WPA2           |
+| --------------- | -------------- |
+| Older           | More secure    |
+| TKIP encryption | AES encryption |
+
+---
+
+# 32. What is MAC Filtering?
+
+### Answer:
+
+MAC filtering allows or blocks devices based on MAC addresses.
+
+---
+
+# 33. What is Physical Security in Networking?
+
+### Answer:
+
+Physical security protects network devices from theft or physical damage.
+
+### Examples:
+
+* Locked server rooms
+* CCTV
+
+---
+
+# 34. What is Cisco IOS Security?
+
+### Answer:
+
+Cisco IOS security protects router and switch configurations using passwords and encryption.
+
+---
+
+# 35. What command encrypts passwords in Cisco devices?
+
+### Answer:
+
+```bash id="v1x9iy"
+service password-encryption
+```
+
+---
+
+# 36. How to configure SSH on Cisco router?
+
+### Answer:
+
+```bash id="e3py29"
+hostname Router1
+ip domain-name ccna.com
+crypto key generate rsa
+username admin secret Cisco123
+line vty 0 4
+login local
+transport input ssh
+```
+
+---
+
+# 37. How to secure console access?
+
+### Answer:
+
+```bash id="jz8j0w"
+line console 0
+password Cisco123
+login
+```
+
+---
+
+# 38. What is Banner Message in Cisco?
+
+### Answer:
+
+Banner messages display security warnings before login.
+
+### Example:
+
+```bash id="cc2prj"
+banner motd # Unauthorized access prohibited #
+```
+
+---
+
+# 39. What is Syslog?
+
+### Answer:
+
+Syslog stores and monitors network device logs.
+
+---
+
+# 40. What is SNMP?
+
+### Answer:
+
+SNMP monitors and manages network devices.
+
+---
+
+# 41. Difference between SNMPv2 and SNMPv3?
+
+### Answer:
+
+| SNMPv2        | SNMPv3                      |
+| ------------- | --------------------------- |
+| Less secure   | More secure                 |
+| No encryption | Authentication & encryption |
+
+---
+
+# 42. What is Secure Management Access?
+
+### Answer:
+
+Using SSH, strong passwords, and ACLs to securely manage devices.
+
+---
+
+# 43. What is PortFast?
+
+### Answer:
+
+PortFast immediately moves ports to forwarding state.
+
+### Used for:
+
+* End devices only
+
+---
+
+# 44. Why should unused ports be disabled?
+
+### Answer:
+
+To prevent unauthorized network access.
+
+### Command:
+
+```bash id="6v7epg"
+shutdown
+```
+
+---
+
+# 45. What is Network Hardening?
+
+### Answer:
+
+Network hardening reduces vulnerabilities by securing configurations.
+
+---
+
+# 46. How to protect switch ports?
+
+### Answer:
+
+* Enable port security
+* Disable unused ports
+* Use VLANs
+
+---
+
+# 47. What is VLAN Security?
+
+### Answer:
+
+VLANs separate network traffic improving security and reducing broadcasts.
+
+---
+
+# 48. What is Password Recovery Risk?
+
+### Answer:
+
+Attackers may gain device access using password recovery if physical access exists.
+
+---
+
+# 49. What is Security Best Practice for Routers?
+
+### Answer:
+
+* Use SSH
+* Strong passwords
+* Disable unused services
+* Update IOS regularly
+
+---
+
+# 50. Strong Final Interview Question
+
+## How would you secure a small office network?
+
+### Strong Answer:
+
+> I would secure the network by configuring firewalls, enabling port security, using VLANs, disabling unused ports, enabling SSH instead of Telnet, applying ACLs, using strong passwords, securing WiFi with WPA2/WPA3, and regularly monitoring logs and updates.
