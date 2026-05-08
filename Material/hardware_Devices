@@ -1,0 +1,522 @@
+# Most Important Networking Devices & Cable Interview Questions with Answers
+
+---
+
+# NETWORKING DEVICES QUESTIONS
+
+# 1. What is a Router?
+
+### Answer:
+
+A router is a Layer 3 device used to connect different networks and forward packets using IP addresses.
+
+### Main Functions:
+
+* Routing
+* Path selection
+* NAT
+* Inter-network communication
+
+### Example:
+
+* Home WiFi router
+
+---
+
+# 2. What is a Switch?
+
+### Answer:
+
+A switch is a Layer 2 device that forwards data using MAC addresses.
+
+### Features:
+
+* Reduces collisions
+* Creates separate collision domains
+* Faster than hub
+
+---
+
+# 3. Difference between Switch and Router?
+
+### Answer:
+
+| Switch                           | Router                      |
+| -------------------------------- | --------------------------- |
+| Layer 2                          | Layer 3                     |
+| Uses MAC address                 | Uses IP address             |
+| Connects devices in same network | Connects different networks |
+
+---
+
+# 4. What is a Hub?
+
+### Answer:
+
+A hub is a Layer 1 device that broadcasts data to all connected devices.
+
+### Disadvantage:
+
+* Causes collisions
+* No intelligence
+
+---
+
+# 5. Difference between Hub and Switch?
+
+### Answer:
+
+| Hub             | Switch                         |
+| --------------- | ------------------------------ |
+| Broadcasts data | Sends data to destination only |
+| Slow            | Faster                         |
+| Layer 1         | Layer 2                        |
+
+---
+
+# 6. What is a Bridge?
+
+### Answer:
+
+A bridge connects two LAN segments and filters traffic using MAC addresses.
+
+---
+
+# 7. What is a Repeater?
+
+### Answer:
+
+A repeater regenerates weak signals to extend network distance.
+
+---
+
+# 8. What is a Gateway?
+
+### Answer:
+
+A gateway connects networks using different protocols.
+
+### Example:
+
+* Internet gateway
+
+---
+
+# 9. What is a Modem?
+
+### Answer:
+
+A modem converts digital signals to analog and analog to digital.
+
+### Types:
+
+* DSL modem
+* Cable modem
+* Fiber modem
+
+---
+
+# 10. What is an Access Point?
+
+### Answer:
+
+Wireless Access Point provides WiFi connectivity to wireless devices.
+
+---
+
+# 11. What is a Firewall?
+
+### Answer:
+
+A firewall filters and monitors network traffic based on security rules.
+
+---
+
+# 12. What is IDS and IPS?
+
+### Answer:
+
+| IDS             | IPS                        |
+| --------------- | -------------------------- |
+| Detects attacks | Detects & prevents attacks |
+| Monitoring only | Active protection          |
+
+---
+
+# 13. What is NIC?
+
+### Answer:
+
+NIC (Network Interface Card) allows devices to connect to a network.
+
+### Every NIC has:
+
+* Unique MAC address
+
+---
+
+# 14. What is CSU/DSU?
+
+### Answer:
+
+CSU/DSU connects digital networks like leased lines to routers.
+
+---
+
+# 15. What is a Load Balancer?
+
+### Answer:
+
+Load balancer distributes traffic among multiple servers.
+
+### Benefits:
+
+* High availability
+* Better performance
+
+---
+
+# 16. What is Proxy Server?
+
+### Answer:
+
+A proxy server acts as intermediary between client and internet.
+
+### Benefits:
+
+* Security
+* Caching
+* Privacy
+
+---
+
+# 17. What is VPN Concentrator?
+
+### Answer:
+
+VPN concentrator manages multiple VPN connections securely.
+
+---
+
+# 18. Which device breaks Broadcast Domain?
+
+### Answer:
+
+Router breaks broadcast domains.
+
+---
+
+# 19. Which device breaks Collision Domain?
+
+### Answer:
+
+Switch breaks collision domains.
+
+---
+
+# 20. Which device works at Layer 3?
+
+### Answer:
+
+Router
+
+---
+
+# MOST IMPORTANT CABLE QUESTIONS
+
+# 21. What is a Network Cable?
+
+### Answer:
+
+A network cable connects devices for data transmission.
+
+---
+
+# 22. Types of Network Cables?
+
+### Answer:
+
+1. Twisted Pair Cable
+2. Coaxial Cable
+3. Fiber Optic Cable
+
+---
+
+# 23. What is Twisted Pair Cable?
+
+### Answer:
+
+Twisted pair cable consists of twisted copper wires to reduce interference.
+
+### Types:
+
+* UTP
+* STP
+
+---
+
+# 24. Difference between UTP and STP?
+
+### Answer:
+
+| UTP        | STP               |
+| ---------- | ----------------- |
+| Unshielded | Shielded          |
+| Cheaper    | Expensive         |
+| More noise | Less interference |
+
+---
+
+# 25. What is Coaxial Cable?
+
+### Answer:
+
+Coaxial cable uses a central copper conductor and shielding.
+
+### Used in:
+
+* Cable TV
+* Broadband internet
+
+---
+
+# 26. What is Fiber Optic Cable?
+
+### Answer:
+
+Fiber optic cable transmits data using light signals.
+
+### Advantages:
+
+* Very high speed
+* Long distance
+* No EMI interference
+
+---
+
+# 27. Difference between Single Mode and Multi Mode Fiber?
+
+### Answer:
+
+| Single Mode   | Multi Mode     |
+| ------------- | -------------- |
+| Long distance | Short distance |
+| Laser light   | LED light      |
+| Expensive     | Cheaper        |
+
+---
+
+# 28. What is RJ45?
+
+### Answer:
+
+RJ45 is the connector used in Ethernet cables.
+
+---
+
+# 29. What is Ethernet Cable?
+
+### Answer:
+
+Ethernet cable connects devices in LAN networks.
+
+---
+
+# 30. Difference between Straight-through and Crossover Cable?
+
+### Answer:
+
+| Straight Cable            | Crossover Cable      |
+| ------------------------- | -------------------- |
+| Same standard both ends   | Different standards  |
+| Connect different devices | Connect same devices |
+
+### Examples:
+
+* PC to Switch → Straight
+* Switch to Switch → Crossover
+
+---
+
+# 31. What are T568A and T568B Standards?
+
+### Answer:
+
+They define wire color arrangement in Ethernet cables.
+
+---
+
+# 32. Which cable is used for long-distance communication?
+
+### Answer:
+
+Fiber optic cable
+
+---
+
+# 33. Which cable supports highest speed?
+
+### Answer:
+
+Fiber optic cable
+
+---
+
+# 34. What is Cat5e Cable?
+
+### Answer:
+
+Cat5e supports:
+
+* Up to 1 Gbps
+* Reduced crosstalk
+
+---
+
+# 35. Difference between Cat5e and Cat6?
+
+### Answer:
+
+| Cat5e           | Cat6             |
+| --------------- | ---------------- |
+| 1 Gbps          | 10 Gbps          |
+| Lower frequency | Higher frequency |
+
+---
+
+# 36. What is EMI?
+
+### Answer:
+
+EMI (Electromagnetic Interference) disturbs signal transmission.
+
+---
+
+# 37. Which cable is immune to EMI?
+
+### Answer:
+
+Fiber optic cable
+
+---
+
+# 38. What is Cable Crimping?
+
+### Answer:
+
+Crimping is attaching RJ45 connectors to Ethernet cable.
+
+---
+
+# 39. What tool is used for crimping?
+
+### Answer:
+
+Crimping tool
+
+---
+
+# 40. What is Patch Panel?
+
+### Answer:
+
+Patch panel organizes network cable connections in racks.
+
+---
+
+# PRACTICAL INTERVIEW QUESTIONS
+
+# 41. How to identify faulty cable?
+
+### Answer:
+
+* Check link light
+* Use cable tester
+* Verify continuity
+* Replace and test
+
+---
+
+# 42. What happens if wrong cable type is used?
+
+### Answer:
+
+* No communication
+* Slow network
+* Packet loss
+
+---
+
+# 43. Which cable is best for data center?
+
+### Answer:
+
+Fiber optic cable
+
+---
+
+# 44. Which cable is commonly used in LAN?
+
+### Answer:
+
+UTP Ethernet cable
+
+---
+
+# 45. Maximum length of Ethernet cable?
+
+### Answer:
+
+```text id="0mqqz7"
+100 meters
+```
+
+---
+
+# 46. Why are twisted wires used in UTP?
+
+### Answer:
+
+To reduce electromagnetic interference and crosstalk.
+
+---
+
+# 47. Which connector is used with Fiber?
+
+### Answer:
+
+* SC
+* ST
+* LC connectors
+
+---
+
+# 48. What is PoE?
+
+### Answer:
+
+PoE (Power over Ethernet) supplies power and data through Ethernet cable.
+
+### Used for:
+
+* IP cameras
+* Access points
+* VoIP phones
+
+---
+
+# 49. What is Crosstalk?
+
+### Answer:
+
+Crosstalk is unwanted signal interference between cable wires.
+
+---
+
+# 50. Strong Final Technical Question
+
+## Why is Fiber Optic preferred over Copper?
+
+### Strong Answer:
+
+> Fiber optic provides higher bandwidth, faster speed, longer distance communication, better security, and immunity to electromagnetic interference compared to copper cables.
