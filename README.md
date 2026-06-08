@@ -4,7 +4,7 @@ This repository contains my **hands-on CCNA practice labs** built using **Cisco 
 
 The goal of this repository is to strengthen practical networking knowledge and demonstrate real-world configuration skills required for **Network Engineering roles and CCNA certification**.
 
-ols Used
+tools Used
 
 * Cisco Packet Tracer
 * Command Line Interface (CLI)
