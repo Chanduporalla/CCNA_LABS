@@ -1,0 +1,197 @@
+Preparing for the Cisco Certified Network Associate (CCNA 200-301) exam requires a strong grasp of both theoretical concepts and the hands-on command-line interface (CLI) commands needed to configure and troubleshoot Cisco hardware.
+
+The following breakdown details the top 10 core concepts frequently tested on the CCNA exam, divided into theoretical and practical formats.
+
+---
+
+## 1. Subnetting & IP Addressing
+
+Subnetting is the absolute foundation of the CCNA exam. You must be able to calculate hosts, networks, and masks quickly.
+
+* **Theory Question:** A company needs to split the network `192.168.1.0/24` into 4 subnets to support different departments. What is the new subnet mask, and how many usable host addresses will each subnet provide?
+* **Answer:** To get 4 subnets, you must borrow 2 bits from the host portion ($2^2 = 4$). The mask changes from `/24` to `/26` (or `255.255.255.192` in dotted-decimal). Each subnet has 6 bits left for hosts ($2^6 = 64$). Subtracting 2 for the Network ID and Broadcast address leaves **62 usable hosts per subnet**.
+
+
+* **Practical (CLI) Question:** Configure the interface `GigabitEthernet 0/0` with the first usable IP address of the second subnet from the scenario above and activate the interface.
+* **Answer:** The second subnet starts at `192.168.1.64/26`, so the first usable address is `192.168.1.65`.
+
+
+```text
+Router# configure terminal
+Router(config)# interface gigabitEthernet 0/0
+Router(config-if)# ip address 192.168.1.65 255.255.255.192
+Router(config-if)# no shutdown
+
+```
+
+
+
+```
+
+## 2. The Router Forwarding Decision (Longest Prefix Match)
+Cisco routers use a specific logical hierarchy to decide where to send packets.
+
+*   **Theory Question:** A router receives a packet destined for `10.1.1.5`. Its routing table contains the following entries: `10.1.1.0/24 via OSPF`, `10.1.1.0/26 via EIGRP`, and `10.1.0.0/16 Static`. Which route will the router choose to forward the packet?
+    *   **Answer:** The router will choose the **`10.1.1.0/26` route**. Routers always prioritize the **Longest Prefix Match** (the most specific subnet mask matching the destination IP) before looking at Administrative Distance (AD) or metric.
+*   **Practical (CLI) Question:** What command should you use to view the live routing table to verify how a router is currently routing traffic?
+    *   **Answer:**
+    ```text
+    Router# show ip route
+
+```
+
+## 3. VLAN Implementation & Logical Segmentation
+
+Virtual Local Area Networks (VLANs) break up large physical broadcast domains into smaller logical ones.
+
+* **Theory Question:** What is the primary purpose of a VLAN, and what protocol is standardly used to tag frames traveling across an inter-switch trunk link?
+* **Answer:** A VLAN logically segments a network at Layer 2 to limit broadcast storms, improve security, and isolate traffic. The industry-standard trunking encapsulation protocol is **IEEE 802.1Q**.
+
+
+* **Practical (CLI) Question:** Create VLAN 20, name it "Sales", and assign the physical port `FastEthernet 0/5` to it as an access port.
+* **Answer:**
+
+
+```text
+Switch# configure terminal
+Switch(config)# vlan 20
+Switch(config-vlan)# name Sales
+Switch(config-vlan)# exit
+Switch(config)# interface fastEthernet 0/5
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 20
+
+```
+
+
+
+```
+
+## 4. Inter-Switch Trunking & Native VLANs
+Trunk links allow traffic from multiple VLANs to cross a single physical link between network switches.
+
+*   **Theory Question:** What happens if there is a Native VLAN mismatch between two interconnected Cisco switches?
+    *   **Answer:** Traffic from the mismatched Native VLANs will bleed into the wrong VLAN on the opposing side, causing communication failures and potential security leaks. The switches will log continuous CDP console errors warning of a "Native VLAN mismatch".
+*   **Practical (CLI) Question:** Configure interface `GigabitEthernet 0/1` as a trunk link and specify that the native un-encapsulated VLAN should be VLAN 99.
+    *   **Answer:**
+    ```text
+    Switch# configure terminal
+    Switch(config)# interface gigabitEthernet 0/1
+    Switch(config-if)# switchport mode trunk
+    Switch(config-if)# switchport trunk native vlan 99
+
+```
+
+## 5. Spanning Tree Protocol (STP / Rapid PVST+)
+
+STP blocks redundant paths in a network to eliminate dangerous Layer 2 switching loops.
+
+* **Theory Question:** How does standard Spanning Tree Protocol decide which switch in a network becomes the Root Bridge?
+* **Answer:** The switch with the lowest **Bridge ID (BID)** is elected. The BID is a combination of the Bridge Priority value (default is 32768) and the switch's unique MAC address. If priorities are tied, the lowest MAC address wins.
+
+
+* **Practical (CLI) Question:** Force a critical core switch to become the Root Bridge for VLAN 10 by lowering its priority using the recommended explicit command.
+* **Answer:**
+
+
+```text
+Switch# configure terminal
+Switch(config)# spanning-tree vlan 10 root primary
+
+```
+
+
+
+```
+    *(Alternatively, you can manually drop the priority using `spanning-tree vlan 10 priority 4096`).*
+
+## 6. EtherChannel Link Aggregation
+EtherChannel groups multiple physical links into one logical link for increased bandwidth and redundancy.
+
+*   **Theory Question:** You are setting up an EtherChannel bundle between two switches using Link Aggregation Control Protocol (LACP). If Switch A is configured in "Passive" mode, what mode must Switch B be in for the link to successfully form?
+    *   **Answer:** Switch B must be configured in **Active** mode. If both sides are passive, they will sit silently waiting for the other to initiate negotiation, and the channel will fail to form.
+*   **Practical (CLI) Question:** Bundle ports `FastEthernet 0/1` and `0/2` into an active LACP EtherChannel under group ID 1.
+    *   **Answer:**
+    ```text
+    Switch# configure terminal
+    Switch(config)# interface range fastEthernet 0/1 - 2
+    Switch(config-if-range)# channel-group 1 mode active
+
+```
+
+## 7. Single-Area OSPFv2 Routing
+
+OSPF is the main dynamic routing protocol covered in the standard CCNA curriculum.
+
+* **Theory Question:** What criteria does an OSPF router use to automatically select its Router ID (RID) if it has not been manually defined?
+* **Answer:** It will pick the highest IP address assigned to any configured **Loopback interface**. If no loopback interfaces exist, it will fall back to selecting the highest active IP address among its **physical interfaces**.
+
+
+* **Practical (CLI) Question:** Enable OSPF process 10, manually assign a Router ID of `1.1.1.1`, and advertise network `10.0.0.0/24` into Backbone Area 0.
+* **Answer:** Note that OSPF uses a wildcard mask (the inverse of a subnet mask), turning `255.255.255.0` into `0.0.0.31`.
+
+
+```text
+Router# configure terminal
+Router(config)# router ospf 10
+Router(config-router)# router-id 1.1.1.1
+Router(config-router)# network 10.0.0.0 0.0.0.255 area 0
+
+```
+
+
+
+```
+
+## 8. Static & Floating Static Routing
+Static routing gives administrators granular control over path choices, while floating static routes offer backup coverage.
+
+*   **Theory Question:** What is a "Floating Static Route," and how do you implement one?
+    *   **Answer:** A floating static route is a backup route. It is configured with an **Administrative Distance (AD)** that is higher than the primary routing method (e.g., higher than OSPF's AD of 110). Because it has a worse AD, it remains hidden ("floating") outside the routing table unless the primary route goes down.
+*   **Practical (CLI) Question:** Configure a primary default static route pointing out to gateway `192.168.1.1`, along with a backup floating static default route pointing to `10.0.0.1` with an AD of 200.
+    *   **Answer:**
+    ```text
+    Router# configure terminal
+    Router(config)# ip route 0.0.0.0 0.0.0.0 192.168.1.1
+    Router(config)# ip route 0.0.0.0 0.0.0.0 10.0.0.1 200
+
+```
+
+## 9. Standard & Extended Access Control Lists (ACLs)
+
+ACLs are packet filters used for basic network security and traffic control.
+
+* **Theory Question:** Where is the architecturally ideal place to position a Standard IPv4 ACL versus an Extended IPv4 ACL?
+* **Answer:** A **Standard ACL** only looks at the source IP address, so it should be placed **as close to the destination as possible** to prevent accidentally blocking legitimate traffic elsewhere. An **Extended ACL** filters by source, destination, protocol, and port, so it should be placed **as close to the source as possible** to conserve network bandwidth by dropping bad packets immediately.
+
+
+* **Practical (CLI) Question:** Create a numbered Extended ACL (101) that permits only HTTP web traffic from host `10.1.1.5` out to a web server at `192.168.5.50`. Ensure all other traffic is implicitly denied.
+* **Answer:**
+
+
+```text
+Router# configure terminal
+Router(config)# access-list 101 permit tcp host 10.1.1.5 host 192.168.5.50 eq 80
+
+```
+
+
+
+```
+
+## 10. Network Address Translation (NAT)
+NAT preserves IPv4 space by mapping internal private addresses to external public addresses.
+
+*   **Theory Question:** What is the difference between Dynamic NAT and Port Address Translation (PAT)?
+    *   **Answer:** Dynamic NAT maps internal private IP addresses to public IP addresses from a pool on a one-to-one basis. If the pool runs out, new connections are blocked. **PAT (NAT Overload)** maps thousands of internal private IP addresses to a *single* public IP address by tracking unique source port numbers for each session.
+*   **Practical (CLI) Question:** Configure PAT (NAT Overload) using an ACL named `INTERNAL_LAN` to translate traffic passing out of external interface `GigabitEthernet 0/1`.
+    *   **Answer:**
+    ```text
+    Router# configure terminal
+    Router(config)# ip nat inside source list INTERNAL_LAN interface gigabitEthernet 0/1 overload
+
+```
+
+---
+
+For a complete deep-dive into how these topics come together in actual exam simulations, this [CCNA Practice Questions Video](https://www.youtube.com/shorts/_tnxpmJEnrA) breaks down some of the absolute toughest troubleshooting scenarios and practice tests you are likely to encounter.
